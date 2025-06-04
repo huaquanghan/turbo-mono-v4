@@ -2,34 +2,24 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import type { Database } from "../types";
 
-const conWarn = console.warn;
-const conLog = console.log;
-
 const IGNORE_WARNINGS = [
   "Using the user object as returned from supabase.auth.getSession()",
 ];
 
-console.warn = (...args) => {
+function filteredLog(level: "warn" | "log", ...args: any[]) {
   const match = args.find((arg) =>
     typeof arg === "string"
       ? IGNORE_WARNINGS.find((warning) => arg.includes(warning))
       : false,
   );
   if (!match) {
-    conWarn(...args);
+    console[level](...args);
   }
-};
+}
 
-console.log = (...args) => {
-  const match = args.find((arg) =>
-    typeof arg === "string"
-      ? IGNORE_WARNINGS.find((warning) => arg.includes(warning))
-      : false,
-  );
-  if (!match) {
-    conLog(...args);
-  }
-};
+// Example usage:
+// filteredLog("warn", "This is a warning message");
+// filteredLog("log", "This is a log message");
 
 type CreateClientOptions = {
   admin?: boolean;
