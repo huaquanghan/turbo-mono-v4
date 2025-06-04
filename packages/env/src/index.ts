@@ -21,7 +21,7 @@ export const env = createEnv({
   server,
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_APP_URL: process.env["NEXT_PUBLIC_APP_URL"],
   },
   skipValidation: !!process.env.CI || process.env.npm_lifecycle_event === "lint",
 });
