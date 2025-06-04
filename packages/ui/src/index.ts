@@ -47,3 +47,4 @@ export * from './components/tooltip';
 
 export * from './lib/utils';
 export * from './hooks/use-mobile';
+export * from './components/theme-provider';

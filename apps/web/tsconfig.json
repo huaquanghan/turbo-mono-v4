@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./src/*"],
       "@rp/ui/*": ["../../packages/ui/src/*"]
     },
     "plugins": [
@@ -13,6 +13,7 @@
     ]
   },
   "include": [
+    "../../reset.d.ts",
     "next-env.d.ts",
     "next.config.mjs",
     "**/*.ts",
