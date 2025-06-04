@@ -1962,6 +1962,42 @@ export type Database = {
           },
         ];
       };
+      domains: {
+        Row: {
+          created_at: string;
+          domain: string;
+          id: string;
+          team_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          domain: string;
+          id?: string;
+          team_id: string;
+        };
+        Update: {
+          created_at?: string;
+          domain?: string;
+          id?: string;
+          team_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "domains_team_id_fkey";
+            columns: ["team_id"];
+            isOneToOne: false;
+            referencedRelation: "team_limits_metrics";
+            referencedColumns: ["team_id"];
+          },
+          {
+            foreignKeyName: "domains_team_id_fkey";
+            columns: ["team_id"];
+            isOneToOne: false;
+            referencedRelation: "teams";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
     };
     Views: {
       team_limits_metrics: {
