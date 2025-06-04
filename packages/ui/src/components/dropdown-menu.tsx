@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import type * as React from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { CheckIcon, ChevronRightIcon, CircleIcon } from 'lucide-react';
 
@@ -14,12 +14,12 @@ function DropdownMenuPortal({ ...props }: React.ComponentProps<typeof DropdownMe
 	return <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
 }
 
-const DropdownMenuTrigger = React.forwardRef<
-        React.ElementRef<typeof DropdownMenuPrimitive.Trigger>,
-        React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Trigger>
->(({ ...props }, ref) => {
-        return <DropdownMenuPrimitive.Trigger ref={ref} data-slot="dropdown-menu-trigger" {...props} />;
-});
+export interface DropdownMenuTriggerProps
+       extends React.ComponentProps<typeof DropdownMenuPrimitive.Trigger> {}
+
+function DropdownMenuTrigger({ ref: triggerRef, ...props }: DropdownMenuTriggerProps) {
+       return <DropdownMenuPrimitive.Trigger ref={triggerRef} data-slot="dropdown-menu-trigger" {...props} />;
+}
 
 DropdownMenuTrigger.displayName = 'DropdownMenuTrigger';
 
