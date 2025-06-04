@@ -12,7 +12,7 @@
 		".": "./src/index.ts"
 	},
 	"scripts": {
-		"lint": "eslint . --max-warnings 0"
+                "lint": "biome lint ."
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.0.1",
@@ -65,7 +65,6 @@
 		"@types/node": "^20",
 		"@types/react": "^19.1.4",
 		"@types/react-dom": "^19.1.5",
-		"@rp/eslint-config": "workspace:*",
 		"@rp/typescript-config": "workspace:*",
 		"class-variance-authority": "^0.7.1",
 		"lucide-react": "0.511.0",

@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome lint ."
   },
   "dependencies": {
     "@rp/ui": "workspace:*",
@@ -22,7 +22,6 @@
     "@types/node": "^20",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
-    "@rp/eslint-config": "workspace:*",
     "@rp/typescript-config": "workspace:*",
     "tailwindcss": "^4",
     "typescript": "^5"
