@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@workspace/ui": "workspace:*",
+    "@rp/ui": "workspace:*",
     "lucide-react": "0.511.0",
     "next-themes": "^0.4.6",
     "next": "15.3.2",
@@ -22,8 +22,8 @@
     "@types/node": "^20",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@rp/eslint-config": "workspace:*",
+    "@rp/typescript-config": "workspace:*",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
