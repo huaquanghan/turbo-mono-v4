@@ -20,18 +20,10 @@ export const env = createEnv({
   client,
   server,
   experimental__runtimeEnv: {
-    NODE_ENV: process.env.NODE_ENV,
+    NODE_ENV: process.env["NODE_ENV"],
     NEXT_PUBLIC_APP_URL: process.env["NEXT_PUBLIC_APP_URL"],
   },
-  skipValidation: !!process.env.CI || process.env.npm_lifecycle_event === "lint",
+  skipValidation:
+    !!process.env["CI"] || process.env["npm_lifecycle_event"] === "lint",
 });
 
-export const serverEnv = {
-  NODE_ENV: env.NODE_ENV,
-  DATABASE_URL: env.DATABASE_URL,
-};
-
-export const clientEnv = {
-  NODE_ENV: env.NODE_ENV,
-  NEXT_PUBLIC_APP_URL: env.NEXT_PUBLIC_APP_URL,
-};
