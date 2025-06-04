@@ -1,5 +1,5 @@
 import { ModeToggle } from '@/components/mode-toggle';
-import { Button, buttonVariants } from '@workspace/ui/components/button';
+import { Button, buttonVariants } from '@rp/ui/components/button';
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
@@ -9,8 +9,8 @@ import {
 	DropdownMenuSubContent,
 	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
-} from '@workspace/ui/components/dropdown-menu';
-import { cn } from '@workspace/ui/lib/utils';
+} from '@rp/ui/components/dropdown-menu';
+import { cn } from '@rp/ui/lib/utils';
 import { ChevronDownIcon } from 'lucide-react';
 import Image from 'next/image';
 
@@ -32,8 +32,8 @@ export default function Home() {
 				</p>
 
 				<pre className="border rounded-sm p-1.5 bg-foreground/10">
-					<code>{`import { Button, buttonVariants } from '@workspace/ui/components/button';
-import { cn } from '@workspace/ui/lib/utils';`}</code>
+					<code>{`import { Button, buttonVariants } from '@rp/ui/components/button';
+import { cn } from '@rp/ui/lib/utils';`}</code>
 				</pre>
 
 				<ModeToggle />

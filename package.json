@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "toolings/*"
   ],
   "scripts": {
     "build": "turbo build",
@@ -13,8 +14,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
+    "@rp/eslint-config": "workspace:*",
+    "@rp/typescript-config": "workspace:*",
     "prettier": "^3.5.3",
     "turbo": "^2.5.3",
     "typescript": "5.8.3"
