@@ -9,7 +9,10 @@ import type { DomainRow } from "@rp/supabase/domain";
 export async function fetchDomains(): Promise<DomainRow[]> {
   const supabase = await createClient();
   const { data } = await listDomains(supabase);
-  return (data ?? []) as any as DomainRow[];
+  if (!Array.isArray(data)) {
+    return [];
+  }
+  return data.filter((item): item is DomainRow => typeof item === "object" && item !== null && "name" in item && "description" in item);
 }
 
 export async function createDomainAction(formData: FormData) {
