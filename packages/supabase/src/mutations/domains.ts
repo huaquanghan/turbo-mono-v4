@@ -7,18 +7,21 @@ interface DomainData {
   [key: string]: any; // Allow additional properties if necessary
 }
 
-export function createDomain(supabase: Client, data: DomainData): Promise<void> {
-  return createDomainModel(supabase).create(data);
+export async function createDomain(
+  supabase: Client,
+  data: DomainData,
+): Promise<void> {
+  await createDomainModel(supabase).create(data);
 }
 
-export function updateDomain(
+export async function updateDomain(
   supabase: Client,
   id: string,
   data: Partial<DomainData>, // Allow partial updates
 ): Promise<void> {
-  return createDomainModel(supabase).update(id, data);
+  await createDomainModel(supabase).update(id, data);
 }
 
-export function deleteDomain(supabase: Client, id: string): Promise<void> {
-  return createDomainModel(supabase).delete(id);
+export async function deleteDomain(supabase: Client, id: string): Promise<void> {
+  await createDomainModel(supabase).delete(id);
 }
