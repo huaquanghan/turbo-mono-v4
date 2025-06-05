@@ -47,6 +47,22 @@ const supabase = createClient()
 The package exposes helper functions under `@rp/supabase/queries` and
 `@rp/supabase/mutations` which expect a Supabase client instance.
 
+### Domain helpers
+
+You can create reusable CRUD helpers for any table using the `createOrm`
+utility. The package ships with a default `domains` implementation which can be
+used as a reference. To query or mutate rows in the `domains` table you can use
+the provided functions:
+
+```ts
+import { getDomainById, listDomains } from '@rp/supabase/queries/domains'
+import { createDomain, updateDomain, deleteDomain } from '@rp/supabase/mutations/domains'
+```
+
+If you need helpers for another table, create a new file that calls
+`createOrm(supabase, '<table>')` and export the resulting methods. This approach
+makes it easy to add domain specific logic without duplicating CRUD code.
+
 ### Storage Utilities
 
 Utility helpers for uploading, downloading and removing files are exported from

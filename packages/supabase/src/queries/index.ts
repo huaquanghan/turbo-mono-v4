@@ -14,3 +14,6 @@ export async function getUserQuery(supabase: Client, userId: string) {
     .single()
     .throwOnError();
 }
+
+export * from "./domains";
+export { createDomainModel } from "../domain";
