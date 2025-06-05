@@ -26,7 +26,10 @@
     "./middleware": "./src/client/middleware.ts",
     "./queries": "./src/queries/index.ts",
     "./cached-queries": "./src/queries/cached-queries.ts",
+    "./queries/domains": "./src/queries/domains.ts",
     "./storage": "./src/utils/storage.ts",
-    "./types": "./src/types/index.ts"
+    "./types": "./src/types/index.ts",
+    "./mutations/domains": "./src/mutations/domains.ts",
+    "./domain": "./src/domain.ts"
   }
 }
