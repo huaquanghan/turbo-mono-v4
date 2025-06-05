@@ -1,5 +1,6 @@
 import { Button, Input } from "@rp/ui";
 import { fetchDomains, createDomainAction, updateDomainAction, deleteDomainAction } from "./actions";
+import type { DomainRow } from "@rp/supabase/types";
 
 export default async function DomainsPage() {
   const domains = await fetchDomains();
@@ -13,7 +14,7 @@ export default async function DomainsPage() {
         <Button type="submit">Create</Button>
       </form>
       <ul className="space-y-4">
-        {domains.map((d: any) => (
+        {domains.map((d: DomainRow) => (
           <li key={d.id} className="flex items-center gap-2">
             <span className="flex-1">{d.name}</span>
             <form action={updateDomainAction.bind(null, d.id)} className="flex gap-2">

@@ -4,11 +4,12 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@rp/supabase/server";
 import { listDomains } from "@rp/supabase/queries/domains";
 import { createDomain, updateDomain, deleteDomain } from "@rp/supabase/mutations/domains";
+import type { DomainRow } from "@rp/supabase/types";
 
-export async function fetchDomains() {
+export async function fetchDomains(): Promise<DomainRow[]> {
   const supabase = await createClient();
   const { data } = await listDomains(supabase);
-  return data ?? [];
+  return (data ?? []) as DomainRow[];
 }
 
 export async function createDomainAction(formData: FormData) {
