@@ -1,6 +1,6 @@
 import { Button, Input } from "@rp/ui";
 import { fetchDomains, createDomainAction, updateDomainAction, deleteDomainAction } from "./actions";
-import type { DomainRow } from "@rp/supabase/types";
+import type { DomainRow } from "@rp/supabase/domain";
 
 export default async function DomainsPage() {
   const domains = await fetchDomains();
