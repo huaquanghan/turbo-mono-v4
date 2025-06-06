@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@rp/ui": "workspace:*",
+    "@rp/remote-config": "workspace:*",
     "lucide-react": "0.511.0",
     "next-themes": "^0.4.6",
     "next": "15.3.2",

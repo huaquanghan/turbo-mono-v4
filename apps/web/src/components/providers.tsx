@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { ThemeProvider, TooltipProvider, Toaster } from '@rp/ui';
-import { RemoteConfigProvider } from './remote-config-provider';
+import { RemoteConfigProvider } from '@rp/remote-config/client';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

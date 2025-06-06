@@ -24,10 +24,31 @@ const config = await getConfig('my-app')
 
 ```ts
 'use client'
-import { useRemoteConfig } from '@rp/remote-config/client'
+import { useRemoteConfig, RemoteConfigProvider } from '@rp/remote-config/client'
 
 export default function Example() {
   const config = useRemoteConfig('my-app')
+  return <pre>{JSON.stringify(config, null, 2)}</pre>
+}
+```
+
+Alternatively, wrap your application in `RemoteConfigProvider` to expose the
+values through context:
+
+```tsx
+'use client'
+import { RemoteConfigProvider, useRemoteConfigContext } from '@rp/remote-config/client'
+
+export default function App({ children }: { children: React.ReactNode }) {
+  return (
+    <RemoteConfigProvider appId="my-app">
+      {children}
+    </RemoteConfigProvider>
+  )
+}
+
+function Example() {
+  const config = useRemoteConfigContext()
   return <pre>{JSON.stringify(config, null, 2)}</pre>
 }
 ```
