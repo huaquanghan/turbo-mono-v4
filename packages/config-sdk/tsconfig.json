@@ -1,0 +1,12 @@
+{
+  "extends": "@rp/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@rp/config-sdk/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "files": ["../../reset.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

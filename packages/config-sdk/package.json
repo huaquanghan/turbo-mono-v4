@@ -1,0 +1,21 @@
+{
+  "name": "@rp/config-sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server-config.ts",
+    "./client": "./src/useConfig.ts",
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "biome lint ."
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

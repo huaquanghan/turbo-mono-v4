@@ -13,9 +13,11 @@ import {
 import { cn } from '@rp/ui/lib/utils';
 import { ChevronDownIcon } from 'lucide-react';
 import Image from 'next/image';
+import { getConfig } from '@rp/config-sdk/server';
 
-export default function Home() {
-	return (
+export default async function Home() {
+        const config = await getConfig();
+        return (
 		<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 				<Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
@@ -27,9 +29,12 @@ export default function Home() {
 					<li>Save and see your changes instantly.</li>
 				</ol>
 
-				<p>
-					All the buttons are from the <kbd>ui</kbd> package. The auto complete works as well.
-				</p>
+                                <p>
+                                        All the buttons are from the <kbd>ui</kbd> package. The auto complete works as well.
+                                </p>
+                                <pre className="text-xs bg-foreground/10 p-2 rounded">
+                                        {JSON.stringify(config, null, 2)}
+                                </pre>
 
 				<pre className="border rounded-sm p-1.5 bg-foreground/10">
 					<code>{`import { Button, buttonVariants } from '@rp/ui/components/button';
