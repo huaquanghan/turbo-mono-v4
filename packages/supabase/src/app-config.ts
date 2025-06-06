@@ -1,18 +1,29 @@
 import type { Client } from './types';
 import { createOrm } from './utils/orm';
 
-export type AppConfigKey = 'welcome_message' | 'feature_enabled';
+export type ConfigValue =
+  | number
+  | boolean
+  | string
+  | Record<string, any>
+  | Date;
 
-export interface AppConfigRow {
+export interface AppConfigRow<
+  Schema extends Record<string, ConfigValue> = Record<string, ConfigValue>,
+  Key extends keyof Schema & string = keyof Schema & string,
+> {
   app_id: string;
-  key: AppConfigKey;
-  value: any;
+  key: Key;
+  value: Schema[Key];
   updated_at: string;
   environment: string;
 }
 
-export function createAppConfigModel(supabase: Client) {
-  const orm = createOrm<AppConfigRow>(supabase, 'app_config');
+export function createAppConfigModel<
+  Schema extends Record<string, ConfigValue> = Record<string, ConfigValue>,
+>(supabase: Client) {
+  type Row = AppConfigRow<Schema>;
+  const orm = createOrm<Row>(supabase, 'app_config');
   return {
     ...orm,
     listByEnv(env: string, appId: string) {
@@ -23,10 +34,23 @@ export function createAppConfigModel(supabase: Client) {
         .eq('app_id', appId)
         .throwOnError();
     },
-    upsertConfig(data: Partial<AppConfigRow>) {
+    upsertConfig<K extends keyof Schema & string>(data: {
+      appId: string;
+      key: K;
+      value: Schema[K];
+      environment: string;
+    }) {
       return (supabase as any)
         .from('app_config')
-        .upsert(data, { onConflict: 'app_id,key' })
+        .upsert(
+          {
+            app_id: data.appId,
+            key: data.key,
+            value: data.value,
+            environment: data.environment,
+          },
+          { onConflict: 'app_id,key' },
+        )
         .single()
         .throwOnError();
     },

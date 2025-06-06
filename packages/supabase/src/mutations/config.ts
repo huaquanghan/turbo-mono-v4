@@ -1,12 +1,17 @@
 import type { Client } from '../types';
-import { createAppConfigModel, type AppConfigKey } from '../app-config';
+import { createAppConfigModel, type ConfigValue } from '../app-config';
 
 export function upsertConfig(
   supabase: Client,
-  data: { appId: string; key: AppConfigKey; value: any; environment: string },
+  data: {
+    appId: string;
+    key: string;
+    value: ConfigValue;
+    environment: string;
+  },
 ) {
   return createAppConfigModel(supabase).upsertConfig({
-    app_id: data.appId,
+    appId: data.appId,
     key: data.key,
     value: data.value,
     environment: data.environment,
