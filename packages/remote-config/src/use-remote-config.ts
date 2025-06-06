@@ -35,7 +35,7 @@ function readCache(appId: string) {
   return null;
 }
 
-export function useConfig(appId: string) {
+export function useRemoteConfig(appId: string) {
   const [config, setConfig] = useState<Record<string, any>>(() => readCache(appId) || {});
 
   useEffect(() => {

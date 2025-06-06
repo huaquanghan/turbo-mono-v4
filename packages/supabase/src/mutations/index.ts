@@ -5,4 +5,4 @@ import type { Client } from "../types";
 
 export * from "./domains";
 export { createDomainModel } from "../domain";
-export { upsertConfig } from "./config";
+export { upsertConfig, deleteConfig } from "./config";

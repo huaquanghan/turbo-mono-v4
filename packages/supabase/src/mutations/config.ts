@@ -17,3 +17,12 @@ export function upsertConfig(
     environment: data.environment,
   });
 }
+
+export function deleteConfig(supabase: Client, appId: string, key: string) {
+  return (supabase as any)
+    .from('app_config')
+    .delete()
+    .eq('app_id', appId)
+    .eq('key', key)
+    .throwOnError();
+}

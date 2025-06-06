@@ -24,10 +24,10 @@ const config = await getConfig('my-app')
 
 ```ts
 'use client'
-import { useConfig } from '@rp/remote-config/client'
+import { useRemoteConfig } from '@rp/remote-config/client'
 
 export default function Example() {
-  const config = useConfig('my-app')
+  const config = useRemoteConfig('my-app')
   return <pre>{JSON.stringify(config, null, 2)}</pre>
 }
 ```

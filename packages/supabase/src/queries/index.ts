@@ -17,3 +17,4 @@ export async function getUserQuery(supabase: Client, userId: string) {
 
 export * from "./domains";
 export { createDomainModel } from "../domain";
+export { listConfig } from "./config";

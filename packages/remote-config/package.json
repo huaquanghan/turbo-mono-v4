@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {
     "./server": "./src/server-config.ts",
-    "./client": "./src/useConfig.ts",
+    "./client": "./src/use-remote-config.ts",
     ".": "./src/index.ts"
   },
   "scripts": {
