@@ -56,3 +56,23 @@ function Example() {
 The functions retrieve values from the `app_config` table filtered by the
 provided `appId` and the current `NODE_ENV`. Results are cached for five
 minutes and updated in real time when using the client hook.
+
+### Next.js API Route
+
+Create an endpoint that returns your configuration with CDN-friendly caching:
+
+```ts
+import { NextResponse } from 'next/server'
+import { getConfig } from '@rp/remote-config/server'
+
+export const runtime = 'edge'
+
+export async function GET() {
+  const config = await getConfig('my-app')
+  return NextResponse.json(config, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=59',
+    },
+  })
+}
+```

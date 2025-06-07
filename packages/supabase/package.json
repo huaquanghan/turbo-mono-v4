@@ -33,6 +33,7 @@
     "./domain": "./src/domain.ts",
     "./supabase": "./src/supabase.ts",
     "./app-config": "./src/app-config.ts",
-    "./mutations/config": "./src/mutations/config.ts"
+    "./mutations/config": "./src/mutations/config.ts",
+    "./queries/config": "./src/queries/config.ts"
   }
 }
