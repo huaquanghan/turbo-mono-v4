@@ -59,6 +59,17 @@
         "typescript": "^5.8.3",
       },
     },
+    "packages/remote-config": {
+      "name": "@rp/remote-config",
+      "version": "0.0.0",
+      "dependencies": {
+        "react": "^19.1.0",
+        "server-only": "^0.0.1",
+      },
+      "devDependencies": {
+        "typescript": "^5.8.3",
+      },
+    },
     "packages/supabase": {
       "name": "@rp/supabase",
       "version": "0.0.0",
@@ -410,6 +421,8 @@
     "@rp/env": ["@rp/env@workspace:packages/env"],
 
     "@rp/kv": ["@rp/kv@workspace:packages/kv"],
+
+    "@rp/remote-config": ["@rp/remote-config@workspace:packages/remote-config"],
 
     "@rp/supabase": ["@rp/supabase@workspace:packages/supabase"],
 

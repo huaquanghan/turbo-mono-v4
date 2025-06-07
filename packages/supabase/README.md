@@ -68,6 +68,27 @@ makes it easy to add domain specific logic without duplicating CRUD code.
 Utility helpers for uploading, downloading and removing files are exported from
 `@rp/supabase/storage`.
 
+### Remote Config Types
+
+The `createAppConfigModel` helper accepts a generic schema describing the
+configuration keys for your application. This allows TypeScript to infer the
+value type for each key when calling `upsertConfig` or reading data.
+
+```ts
+interface MyConfig {
+  welcome_message: string
+  feature_enabled: boolean
+}
+
+const model = createAppConfigModel<MyConfig>(supabase)
+model.upsertConfig({
+  appId: 'web',
+  key: 'feature_enabled',
+  value: true,
+  environment: 'production',
+})
+```
+
 ### Dynamic Table Example
 
 To add a custom table such as `blog` with fields like `title`, `created_at` and
