@@ -14,13 +14,10 @@ import { cn } from '@rp/ui/lib/utils';
 import { ChevronDownIcon } from 'lucide-react';
 import Image from 'next/image';
 
-import { getConfig } from '@rp/remote-config/server'
-
-export default async function Home() {
-        const config = await getConfig('web')
-        return (
-                <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+export default function Home() {
+	return (
+		<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 				<Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
 				<ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
 					<li className="mb-2">
@@ -41,11 +38,7 @@ import { cn } from '@rp/ui/lib/utils';`}</code>
 
 				<ModeToggle />
 
-                                <Button size={'sm'}>Click me</Button>
-
-                                <pre className="border rounded-sm p-1.5 bg-foreground/10">
-                                        <code>{JSON.stringify(config, null, 2)}</code>
-                                </pre>
+				<Button size={'sm'}>Click me</Button>
 
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>

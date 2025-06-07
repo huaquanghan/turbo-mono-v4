@@ -8,6 +8,13 @@ export type ConfigValue =
   | Record<string, any>
   | Date;
 
+export type ConfigType =
+  | 'number'
+  | 'boolean'
+  | 'string'
+  | 'object'
+  | 'datetime';
+
 export interface AppConfigRow<
   Schema extends Record<string, ConfigValue> = Record<string, ConfigValue>,
   Key extends keyof Schema & string = keyof Schema & string,
@@ -15,6 +22,7 @@ export interface AppConfigRow<
   app_id: string;
   key: Key;
   value: Schema[Key];
+  type: ConfigType;
   updated_at: string;
   environment: string;
 }
@@ -29,7 +37,7 @@ export function createAppConfigModel<
     listByEnv(env: string, appId: string) {
       return (supabase as any)
         .from('app_config')
-        .select('key,value,updated_at')
+        .select('key,value,type,updated_at')
         .eq('environment', env)
         .eq('app_id', appId)
         .throwOnError();
@@ -38,6 +46,7 @@ export function createAppConfigModel<
       appId: string;
       key: K;
       value: Schema[K];
+      type: ConfigType;
       environment: string;
     }) {
       return (supabase as any)
@@ -47,6 +56,7 @@ export function createAppConfigModel<
             app_id: data.appId,
             key: data.key,
             value: data.value,
+            type: data.type,
             environment: data.environment,
           },
           { onConflict: 'app_id,key' },
