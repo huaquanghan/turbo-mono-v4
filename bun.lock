@@ -19,7 +19,6 @@
       "name": "web",
       "version": "0.0.1",
       "dependencies": {
-        "@rp/remote-config": "workspace:*",
         "@rp/ui": "workspace:*",
         "lucide-react": "0.511.0",
         "next": "15.3.2",
