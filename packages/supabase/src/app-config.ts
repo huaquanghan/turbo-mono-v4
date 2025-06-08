@@ -35,7 +35,7 @@ export function createAppConfigModel<
   return {
     ...orm,
     listByEnv(env: string, appId: string) {
-      return (supabase as any)
+      return supabase
         .from('app_config')
         .select('key,value,type,updated_at')
         .eq('environment', env)
