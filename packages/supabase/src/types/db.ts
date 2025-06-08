@@ -1962,6 +1962,33 @@ export type Database = {
           },
         ];
       };
+      app_config: {
+        Row: {
+          app_id: string;
+          environment: string;
+          key: string;
+          type: string | null;
+          updated_at: string;
+          value: Json | null;
+        };
+        Insert: {
+          app_id: string;
+          environment: string;
+          key: string;
+          type?: string | null;
+          updated_at?: string;
+          value?: Json | null;
+        };
+        Update: {
+          app_id?: string;
+          environment?: string;
+          key?: string;
+          type?: string | null;
+          updated_at?: string;
+          value?: Json | null;
+        };
+        Relationships: [];
+      };
       domains: {
         Row: {
           created_at: string;
