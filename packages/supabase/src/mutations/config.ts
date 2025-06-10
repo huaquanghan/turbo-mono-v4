@@ -12,7 +12,7 @@ export function upsertConfig(supabase: Client, data: UpsertConfigInput) {
 }
 
 export function deleteConfig(supabase: Client, appId: string, key: string) {
-  return (supabase as any)
+  return supabase
     .from('app_config')
     .delete()
     .eq('app_id', appId)
