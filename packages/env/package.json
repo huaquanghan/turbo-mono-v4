@@ -10,7 +10,7 @@
     "lint": "biome lint ."
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.13.6",
+    "@t3-oss/env-nextjs": "^0.13.8",
     "zod": "^3.25.0"
   },
   "devDependencies": {

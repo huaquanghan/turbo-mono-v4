@@ -7,15 +7,15 @@
   },
   "dependencies": {
     "@supabase/postgrest-js": "^1.19.4",
-    "@supabase/ssr": "^0.6.1",
+    "@supabase/ssr": "^0.7.0",
     "date-fns": "^4.1.0",
-    "react": "^19.1.0",
+    "react": "^19.2.0",
     "server-only": "^0.0.1",
-    "supabase": "^2.23.4"
+    "supabase": "^2.58.5"
   },
   "devDependencies": {
-    "@supabase/supabase-js": "^2.49.8",
-    "typescript": "^5.8.3"
+    "@supabase/supabase-js": "^2.84.0",
+    "typescript": "^5.9.3"
   },
   "exports": {
     "./server": "./src/client/server.ts",
