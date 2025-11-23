@@ -1,2 +1,2 @@
 export PATH="$HOME/.bun/bin:$PATH"
-~/.bun/bin/bun run lint
+bun run lint
