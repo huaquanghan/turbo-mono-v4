@@ -12,10 +12,10 @@
     "lint": "biome lint ."
   },
   "dependencies": {
-    "react": "^19.1.0",
+    "react": "^19.2.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
