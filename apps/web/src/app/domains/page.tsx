@@ -7,7 +7,7 @@ export default async function DomainsPage() {
 
   return (
     <div className="space-y-6 p-4">
-      <h1 className="text-xl font-bold">Domains</h1>
+      <h1 className="font-bold text-xl">Domains</h1>
       <form action={createDomainAction} className="flex gap-2">
         <Input name="name" placeholder="Name" className="flex-1" />
         <Input name="description" placeholder="Description" className="flex-1" />
