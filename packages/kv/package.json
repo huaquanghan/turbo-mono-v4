@@ -1,7 +1,6 @@
 {
 	"name": "@rp/kv",
 	"version": "0.0.0",
-	"private": true,
 	"exports": {
 		"./client": "./src/index.ts",
 		"./ratelimit": "./src/ratelimit.ts"
@@ -10,8 +9,8 @@
 		"lint": "biome lint ."
 	},
 	"dependencies": {
-		"@upstash/ratelimit": "^2.0.7",
-		"@upstash/redis": "^1.35.6",
+		"@upstash/ratelimit": "^2.0.8",
+		"@upstash/redis": "^1.37.0",
 		"server-only": "^0.0.1"
 	},
 	"devDependencies": {

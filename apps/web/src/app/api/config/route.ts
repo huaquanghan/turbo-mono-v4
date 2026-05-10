@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { getConfig } from '@rp/remote-config/server'
-import { runtime, appId } from '@/config/api.config'
+import { appId } from '@/config/api.config'
 
-export { runtime }
+export const runtime = 'edge'
 
 export async function GET() {
   const config = await getConfig(appId)
