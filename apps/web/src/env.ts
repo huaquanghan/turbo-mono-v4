@@ -1,1 +1,1 @@
-export { env } from "@rp/env";
+export { env } from "@rp/env"

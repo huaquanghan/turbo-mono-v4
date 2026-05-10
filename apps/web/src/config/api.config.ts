@@ -1,2 +1,2 @@
-export const runtime = 'edge'
-export const appId = 'web'
+export const runtime = "edge"
+export const appId = "web"
